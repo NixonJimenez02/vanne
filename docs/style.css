@@ -1,0 +1,205 @@
+body {
+  background-color: #000;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flower {
+  height: 200px;
+  width: 200px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-color: #000;
+  animation: pulsate 2s infinite;
+}
+
+.text-above {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-size: 25px;
+  top: var(--text-above-top);
+}
+
+.text-below {
+  position: absolute;
+  text-align: center;
+  color: #fff;
+  font-size: 25px;
+  bottom: var(--text-below-bottom);
+}
+
+.text-above {
+  top: -60px;
+}
+
+.text-below {
+  bottom: -80px;
+}
+
+@keyframes pulsate {
+  0% {
+      transform: scale(1.5);
+  }
+  50% {
+      transform: scale(1.6);
+  }
+  100% {
+      transform: scale(1.5);
+  }
+}
+
+.mid {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #000, #ff5e00, #000);
+  z-index: 4;
+  background-size: 5px 5px;
+  filter: drop-shadow(0 0 8px #682600);
+}
+
+.Petal1 {
+  position: absolute;
+  left: 40px;
+  z-index: 3;
+  width: 120px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff5e00, #ffbb00);
+  filter: drop-shadow(0 0 5px #e05200);
+}
+
+.Petal1.p1 {
+  transform: rotate(22.5deg);
+}
+
+.Petal1.p2 {
+  transform: rotate(67.5deg);
+}
+
+.Petal1.p3 {
+  transform: rotate(110.5deg);
+}
+
+.Petal1.p4 {
+  transform: rotate(157.5deg);
+}
+
+.Petal2 {
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  width: 200px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff5e00, #fbd702);
+  filter: drop-shadow(0 0 5px #e05200);
+}
+
+.Petal2.p1 {
+}
+
+.Petal2.p2 {
+  transform: rotate(90deg);
+}
+
+.Petal2.p3 {
+  transform: rotate(45deg);
+}
+
+.Petal2.p4 {
+  transform: rotate(135deg);
+}
+
+.Petal3 {
+  position: absolute;
+  left: 0px;
+  z-index: 1;
+  width: 200px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ff5e00, #fbd702);
+  filter: drop-shadow(0 0 2px #fbd702);
+}
+
+.Petal3.p1 {
+  transform: rotate(22.5deg);
+}
+
+.Petal3.p2 {
+  transform: rotate(67.5deg);
+}
+
+.Petal3.p3 {
+  transform: rotate(110.5deg);
+}
+
+.Petal3.p4 {
+  transform: rotate(157.5deg);
+}
+
+.stem {
+  position: absolute;
+  width: 10px;
+  height: 100px;
+  background-color: #19fe04; /* Color del tallo */
+  top: 150px; /* Ajusta la posición vertical del tallo */
+  left: 95px; /* Ajusta la posición horizontal del tallo */
+  transform: rotate(180deg);
+}
+
+
+
+
+
+/* Resto de tus estilos */
+
+/* Estilos para la lluvia de imágenes en el lado izquierdo */
+.rain.left {
+  position: absolute;
+  width: 20%;
+  height: 100%;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/* Estilos para la lluvia de imágenes en el lado derecho */
+.rain.right {
+  position: absolute;
+  width: 40%;
+  height: 130%;
+  pointer-events: none;
+  top: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+.raindrop {
+  position: absolute;
+  width: 10vw; /* Utiliza unidades vw para hacer las imágenes de lluvia responsive */
+  animation: fall 6s linear infinite;
+  opacity: 1;
+  top: -20vw; /* Utiliza unidades vw para ajustar la posición inicial de las imágenes */
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Define la animación de caída */
+@keyframes fall {
+  0% {
+    transform: translateY(-5vw);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
